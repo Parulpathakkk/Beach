@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Helvetica";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica"),
+        url("../assets/fonts/Helvetica.ttf") format("ttf");
+}
+@font-face {
+    font-family: "Singa";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Singa"),
+        url("../assets/fonts/Singa.ttf") format("ttf");
+}
+
+.font-Helvetica {
+    font-family: "Helvetica";
+}
+.font-Singa {
+    font-family: "Singa";
+}
+
+

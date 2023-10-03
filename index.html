@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/output.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <title>Vite App</title>
+    </head>
+    <body >
+        <section x-data="{ 
+            slideOverOpen: false 
+        }"  class="h-screen w-full relative overflow-hidden">
+            <img class="absolute h-full w-full object-cover -z-10" src="/assets/images/beachhome.png" alt="" />
+            <div class="flex justify-between items-center pt-[3cqw] px-[6cqw]">
+                <div><img class="h-[3.3cqw]" src="./assets/images/logo.png" alt="" /></div>
+                <button class="border-[0.1cqw] border-white rounded-[1.3cqw] py-[0.6cqw] px-[1.4cqw] flex justify-between items-center gap-[0.6cqw]" @click="slideOverOpen=true" >
+                    <p class="font-mono text-[1.4cqw] tracking-[-0.05cqw] text-white font-bold">MENU</p>
+                    <div class="flex flex-col gap-[0.3cqw] items-center w-[1.2cqw]">
+                        <div class="bg-white h-[0.12cqw] w-full"></div>
+                        <div class="bg-white h-[0.12cqw] w-full"></div>
+                        <div class="bg-white h-[0.12cqw] w-full"></div>
+                    </div>
+                </button>
+            </div>
+            <div class="absolute bottom-[4cqw] right-[14cqw] w-[60%]">
+                <div class="flex  gap-[1cqw] justify-start items-end">
+                    <div><p class="font-Helvetica leading-[2] text-white text-[1cqw] mb-[1.6cqw] text-right ">EXPERIENCE THE ULTIMATE BEACH <br> GETAWAY AT GOKARNA. DISCOVER <br> PRISTINE SHORES, SERENE WATERS. <br> BOOK YOUR ESCAPE TODAY</p></div>
+                    <div class="relative">
+                        <p class="font-bebas text-white text-[14cqw] leading-[.85] text-right">
+                            BEACH <br />
+                            GETAWAY
+                        </p>
+                        <img class="absolute bottom-[-5cqw] h-[11cqw] right-[-6cqw]" src="./assets/images/trybook.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+              <!-- hey -->
+  
+        
+        <template x-teleport="body">
+            <div 
+                x-show="slideOverOpen"
+                @keydown.window.escape="slideOverOpen=false"
+                class="relative z-[99]">
+                <div x-show="slideOverOpen" x-transition.opacity.duration.600ms @click="slideOverOpen = false" class="fixed inset-0 bg-black bg-opacity-10"></div>
+                <div class="fixed inset-0 overflow-hidden">
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="fixed inset-y-0 right-0 flex max-w-full">
+                            <div 
+                                x-show="slideOverOpen" 
+                                @click.away="slideOverOpen = false"
+                                x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700" 
+                                x-transition:enter-start="translate-x-full" 
+                                x-transition:enter-end="translate-x-0" 
+                                x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700" 
+                                x-transition:leave-start="translate-x-0" 
+                                x-transition:leave-end="translate-x-full" 
+                                class="w-screen">
+                                <div class="relative h-full">
+                                        <div class="absolute h-full w-full">
+                                            <div class="grid grid-cols-3 h-full">
+                                                <div class="h-full w-full bg-gray-800 relative cursor-pointer group  duration-700 transition-all overflow-hidden">
+                                                    <img class="h-full w-full opacity-10 object-cover group-hover:opacity-90 duration-700 transition-all group-hover:scale-125 " src="./assets/images/gokarna.jpg" alt="">
+                                                    <div class="absolute bottom-[10%] left-1/2 -translate-x-1/2">
+                                                        <p class="font-bebas text-white text-[3.6cqw] leading-[1]">01</p>
+                                                        <p class="font-bebas text-white text-[9cqw] leading-[1]">GOKARNA</p>
+                                                    </div>
+                                                    <div class="absolute top-[30%] right-[0.5cqw] z-20">
+                                                        <p class="text-white font-bebas text-[3.6cqw]">TOP PICKS OF</p>
+                                                    </div>
+                                                </div>
+                                                <div class="h-full w-full bg-gray-800  relative cursor-pointer group duration-700 transition-all overflow-hidden"><img class="h-full w-full object-cover opacity-10 group-hover:opacity-90 duration-700 transition-all group-hover:scale-125" src="./assets/images/goa.jpg" alt="">
+                                                    <div class="absolute bottom-[10%] left-1/2 -translate-x-1/2">
+                                                        <p class="font-bebas text-white text-[3.6cqw] leading-[1]">02</p>
+                                                        <p class="font-bebas text-white text-[9cqw] leading-[1]">GOA</p>
+                                                    </div>
+                                                    <div class="absolute top-[30%] left-0 z-20">
+                                                        <p class="text-white font-bebas text-[3.6cqw]">THIS SZN</p>
+                                                    </div>
+                                                </div>
+                                                <div class="h-full w-ful bg-gray-800  relative cursor-pointer group duration-700 transition-all overflow-hidden"><img class="h-full w-full object-cover opacity-10 group-hover:opacity-90 duration-700 transition-all group-hover:scale-125" src="./assets/images/pondi.jpg" alt="">
+                                                    <div class="absolute bottom-[10%] left-1/2 -translate-x-1/2">
+                                                        <p class="font-bebas text-white text-[3.6cqw] leading-[1]">03</p>
+                                                        <p class="font-bebas text-white text-[9cqw] leading-[1]">PONDI</p>
+
+                                                    </div></div>
+
+                                            </div>
+
+                                        </div>
+                                       
+                                        <div class="flex justify-between items-center pt-[3cqw] px-[6cqw] relative z-20">
+                                            <div><img class="h-[3.3cqw]" src="./assets/images/logo.png" alt="" /></div>
+                                            <button class="border-[0.1cqw] border-white rounded-[1.3cqw] py-[0.6cqw] px-[1.4cqw] flex justify-between items-center gap-[0.6cqw]" @click="slideOverOpen=false" >
+                                                <p class="font-mono text-[1.4cqw] tracking-[-0.05cqw] text-white font-bold">MENU</p>
+                                                <div class="flex flex-col gap-[0.3cqw] items-center w-[1.2cqw]">
+                                                    <div class="bg-white h-[0.12cqw] w-full"></div>
+                                                    <div class="bg-white h-[0.12cqw] w-full"></div>
+                                                    <div class="bg-white h-[0.12cqw] w-full"></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                      
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        </section>
+      
+    
+    
+
+
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
